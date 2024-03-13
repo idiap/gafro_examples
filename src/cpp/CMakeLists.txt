@@ -1,0 +1,35 @@
+find_package(gafro REQUIRED)
+find_package(gafro REQUIRED)
+find_package(gafro_robot_descriptions REQUIRED)
+
+find_package(yaml-cpp)
+
+# If yaml-cpp is installed in /usr/local/ (on either Linux or macOS), it is found but informations are missing
+set(gafro_USE_YAML_CPP ${yaml-cpp_FOUND})
+if (gafro_USE_YAML_CPP)
+    string(FIND ${yaml-cpp_DIR} "/usr/local/" FOUND)
+    if (FOUND EQUAL 0)
+        set(YAML_CPP_INCLUDE_DIRS "/usr/local/include")
+        set(YAML_CPP_LIBRARIES "yaml-cpp")
+    endif()
+endif()
+
+include(gafro_add_example)
+
+gafro_add_example(multivector)
+gafro_add_example(geometric_primitives)
+gafro_add_example(geometric_primitives_incidence)
+gafro_add_example(versor_log_exp_map)
+gafro_add_example(versors_transforming_geometric_primitives)
+gafro_add_example(franka_emika_kinematics_and_dynamics)
+gafro_add_example(differential_kinematics_controller)
+
+gafro_add_example(inverse_kinematics)
+gafro_add_example(inverse_kinematics_point_point)
+gafro_add_example(inverse_kinematics_point_pointpair)
+gafro_add_example(inverse_kinematics_point_line)
+gafro_add_example(inverse_kinematics_point_circle)
+gafro_add_example(inverse_kinematics_point_plane)
+gafro_add_example(inverse_kinematics_point_sphere)
+gafro_add_example(inverse_kinematics_line_point)
+gafro_add_example(inverse_kinematics_line_line)
