@@ -23,6 +23,7 @@ gafro_add_example(versor_log_exp_map)
 gafro_add_example(versors_transforming_geometric_primitives)
 gafro_add_example(franka_emika_kinematics_and_dynamics)
 gafro_add_example(differential_kinematics_controller)
+gafro_add_example(create_manipulator_from_code)
 
 gafro_add_example(inverse_kinematics)
 gafro_add_example(inverse_kinematics_point_point)
